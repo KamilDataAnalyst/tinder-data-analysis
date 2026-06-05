@@ -4,7 +4,7 @@ Kompleksowy projekt analityczny typu End-to-End, skupiający się na procesie ET
 
 ## 🚀 Demo projektu (Interaktywny Dashboard)
 
-![Tinder Dashboard Demo](images/twój_plik.gif)
+<img width="800" height="322" alt="Image" src="https://github.com/user-attachments/assets/cd8638c0-5bee-410d-8287-afd47251aae2" />
 
 *Powyższy GIF prezentuje interaktywne działanie fragmentatorów (slicers) oraz dynamiczną reakcję wykresów na filtrowanie danych w czasie rzeczywistym.*
 
@@ -18,38 +18,37 @@ Głównym wyzwaniem było uporządkowanie i zanalizowanie anonimowej, reprezenta
 
 ## 📂 Źródło danych (Data Source)
 Analiza została przeprowadzona na otwartym zbiorze danych (dataset), z którego czerpałem inspirację podczas tworzenia modelu:
-* **Kaggle Dataset:** [Tutaj wklej nazwę zbioru lub link, np. Tinder User Behavior Data](TUTAJ_WKLEJ_LINK_Z_KAGGLE)
+* **Kaggle Dataset:** https://www.kaggle.com/datasets/ashleyxu98/tinder
 * *Uwaga: Analiza opiera się na wyodrębnionej, anonimowej próbce badawczej danych demograficznych i behawioralnych, a nie na globalnej, pełnej bazie platformy Tinder.*
 
 ---
 
 ## 🛠️ Architektura i użyte technologie
-* **Power Query (ETL):** Pobranie surowego pliku danych, czyszczenie (usunięcie duplikatów i braków danych), transformacja typów danych, stworzenie spójnego modelu relacyjnego.
+* **Power Query (ETL):** Pobranie surowego pliku danych, czyszczenie (zamiana kropek na przecinki), transformacja typów danych, stworzenie spójnego modelu relacyjnego.
 * **Tabele i Wykresy Przestawne (Pivot Tables & Charts):** Agregacja danych i wyliczenie zaawansowanych miar (np. współczynników konwersji).
 * **Fragmentatory (Slicers):** Stworzenie intuicyjnego, interaktywnego panelu nawigacyjnego do szybkiej filtracji (płeć, grupy wiekowe, status aktywności).
-* **Formatowanie Warunkowe (Conditional Formatting):** Automatyczne wyróżnianie skrajnych wartości, ułatwiające natychmiastową identyfikację anomalii w danych.
 
 ---
 
 ## 📈 Kluczowe wnioski (Data Insights)
 
-* **Segmentacja użytkowników (Power vs. Low Users):** Analiza wykazuje wyraźny podział bazy. Grupa *Power Users* odpowiada za ponad 70% całkowitej aktywności w analizowanej próbce, generując jednocześnie najwyższy wskaźnik zaangażowania w wiadomościach tekstowych.
-* **Współczynnik konwersji (Match Rate & Swipe Ratio):** Zauważalny jest silny „Gender Gap” w strategiach korzystania z aplikacji. Mężczyźni wykazują znacznie wyższy wskaźnik przesunięć w prawo (*Likes*), co jednak przekłada się na niższy procentowy *Match Rate* w porównaniu do kobiet, które selektywniej dobierają profile, osiągając wyższą efektywność pojedynczego przesunięcia.
-* **Analiza lejka wiadomości (Engagement Funnel):** Część badanych użytkowników popada w tzw. "martwe dopasowania" – pary są tworzone, ale konwersacja nigdy nie rusza. Wskaźnik ten rośnie w młodszych grupach wiekowych, co wskazuje na spadek zaangażowania po początkowym sukcesie (dopasowaniu).
+* **Rozkład segmentów użytkowników (Segment Distribution):** Analiza wykazuje, że największa część użytkowników wpada w segment *High Usage* – stanowi on aż 59% populacji mężczyzn i 67% populacji kobiet w badanej próbce. Kobiety wyraźnie dominują nad mężczyznami w najwyższych grupach zaangażowania (*High* oraz *Power User*), osiągając w nich łącznie wynik 81% (vs 68% u mężczyzn).
+* **Efektywność dopasowań (Match Efficiency):** Kobiety wykazują drastycznie wyższą skuteczność w zdobywaniu dopasowań. Mimo że wykonują wykładniczo mniej przesunięć w prawo (*Swipe Right / LIKE* – średnio 2 682 vs aż 20 405 u mężczyzn), to generują znacznie wyższą średnią liczbę dopasowań (*Matches* – średnio 990 u kobiet vs 619 u mężczyzn).
+* **Dynamika wiadomości (Texting Dynamics):** Mężczyźni wysyłają średnio więcej wiadomości, niż otrzymują (2 182 wysłane vs 1 957 odebranych). U kobiet trend jest odwrotny – otrzymują one znacząco więcej komunikatów, niż same wysyłają (3 252 odebrane vs 2 584 wysłane).
 
 ---
 
 ## 💡 Rekomendacje biznesowe i produktowe
 
-* **Optymalizacja subskrypcji Premium:** Dla grupy *Low Usage Users* warto wdrożyć spersonalizowane, tańsze pakiety mikrosubskrypcji (np. dostęp na weekend), aby aktywować ich potencjał zakupowy. Z kolei dla *Power Users* należy promować pakiety zwiększające widoczność profilu (*Boost*).
-* **Wprowadzenie funkcji "Icebreaker":** Aby zapobiegać "martwym dopasowaniom", aplikacja powinna automatycznie sugerować spersonalizowane pytania na start na podstawie wspólnych zainteresowań użytkowników, co podniesie wskaźnik rozpoczętych konwersacji.
-* **Algorytmiczne wsparcie zaangażowania:** Rekomenduje się czasowe ograniczanie widoczności profili, które masowo przesuwają wszystkich użytkowników w prawo bez selekcji, na rzecz promowania profili dbających o wysoką jakość interakcji.
+* **Monetyzacja segmentu High i Power:** Ponieważ połączone segmenty *High Usage* i *Power User* stanowią zdecydowaną większość bazy użytkowników (szczególnie u kobiet – 81%), aplikacja powinna rozwijać funkcje Premium dedykowane dla osób spędzających w aplikacji najwięcej czasu (np. zaawansowane filtry wyszukiwania czy status priorytetowego polubienia).
+* **Wsparcie zaangażowania mężczyzn:** Z powodu dysproporcji w liczbie *Likes* do realnych dopasowań u mężczyzn (ponad 20 tysięcy przesunięć na jedyne 619 par), warto wdrożyć funkcje pomagające optymalizować profile męskie (np. inteligentny asystent wyboru najlepszego zdjęcia profilowego), co przełoży się na lepsze doświadczenia z użytkowania aplikacji.
+* **Aktywacja segmentu Low Usage:** Użytkownicy z segmentu *Low Usage* logują się do aplikacji rzadko i mają bardzo mało konwersacji (średnio 23 u mężczyzn i 51 u kobiet). Należy wdrożyć dla nich automatyczne powiadomienia PUSH w momentach najwyższego ruchu w aplikacji, aby zachęcić ich do powrotu i częstszego wchodzenia w interakcje.
 
 ---
 
 ## 📂 Zawartość repozytorium
-* `Tinder_Data_Analysis.xlsx` - Pełny plik Excel zawierający model danych, tabele przestawne oraz gotowy dashboard.
-* `images/` - Folder z plikami graficznymi (interaktywny GIF prezentujący działanie projektu).
+* 📊 **[Tinder Analysis.xlsx](Tinder%20Analysis.xlsx)** - Pełny plik Excel zawierający model danych, tabele przestawne oraz gotowy, interaktywny dashboard.
+* 🎞️ **[Tinder summary dashboard.gif](Tinder%20summary%20dashboard.gif)** - Plik graficzny prezentujący dynamiczne działanie projektu i fragmentatorów.
 
 ---
 *Projekt został przygotowany w celach demonstracyjnych jako kluczowy element portfolio młodszego analityka danych (Junior Data Analyst).*
